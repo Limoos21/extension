@@ -1,0 +1,362 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="manifest" href="/manifest.json">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/popup.js"></script>
+        <script type="text/javascript" src="js/content.js"></script>
+        <script type="text/javascript" src="js/background.js"></script>
+
+        <div class="main_deauth" style="display:none">
+        <div class="container">
+            <div class="header_ex">
+                <span class="name_exstention">TPoints</span>
+            </div>
+            <div class="main_content">
+                <div class="main_content_in">
+                    <div class="text_ex_first">Призы <span style="color:#b494db">за просмотр</span></div>
+                    <div class="text_ex_second">Для использования вы должны быть авторизованы в <span style="color:#b494db;font-size: 15px;">Twich</span></div>
+                    <form>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <button id="myButton">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                color: #ffffff;
+                font-family: 'Rubik', sans-serif;
+                font-size: 18px;
+            }
+            .container {
+                background: #201e30;
+                width: 350px;
+            }
+            .header_ex {
+                width: 350px;
+                height: 45px;
+                background-color: #1a1924;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .name_exstention {
+                color: #c5a1f9;
+                font-size: 15px;
+            }
+            .main_content {
+                width: 100%;
+                background-image: url('img/tp.png');
+                background-position: center;
+                background-size: 70%;
+                background-repeat: no-repeat;
+            }
+            .main_content_in {
+                padding: 25px;
+                font-weight: 400;
+            }
+            .text_ex_second {
+                margin-top: 17px;
+                font-size: 15px;
+            }
+            .text_ex_three {
+                height: 40px;
+                border: 1px solid #8e8e98;
+                border-radius: 5px 20px 5px 20px;
+                background-color: #181824;
+                -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 17px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                background-color: #b494db;
+                cursor: pointer;
+            }
+            .text_ex_three:hover {
+                -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+            }
+            .text_ex_four {
+                font-weight: 400;
+                margin-top: 17px;
+                font-size: 15px;
+            }
+        </style>
+        </div>
+        <div class="auth_user" style="display:none">
+            <div class="container">
+                <div class="header_ex">
+                    <span class="name_exstention">TPoints</span>
+                </div>
+                <div class="main_content">
+                    <div class="main_content_in">
+                        <div class="text_ex_first"><img class="text_ex_first_img" style="height:100%" src=""></div>
+                        <div class="text_ex_second"></div>
+                        <div class="text_ex_second_two_name">Баланс:</div>
+                        <div class="text_ex_second_two">...</div>
+                        <div class="text_ex_three">Потратить баллы</div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    color: #ffffff;
+                    font-family: 'Rubik', sans-serif;
+                    font-size: 18px;
+                }
+                .container {
+                    background: #201e30;
+                    width: 350px;
+                }
+                .header_ex {
+                    width: 350px;
+                    height: 45px;
+                    background-color: #1a1924;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .name_exstention {
+                    color: #c5a1f9;
+                    font-size: 15px;
+                }
+                .main_content {
+                    width: 100%;
+                    background-image: url('img/tp.png');
+                    background-position: center;
+                    background-size: 70%;
+                    background-repeat: no-repeat;
+                }
+                .main_content_in {
+                    padding: 25px;
+                    font-weight: 400;
+                }
+                .text_ex_first {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-left: auto;
+                    margin-right: auto;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                }
+                .text_ex_second {
+                    margin-top: 17px;
+                    font-size: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #b494db;
+                    font-weight: 500;
+                }
+                .text_ex_second_two_name {
+                    margin-top: 17px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                }
+                .text_ex_second_two {
+                    height: 40px;
+                    width: 70px;
+                    border: 1px solid #8e8e98;
+                    border-radius: 5px 20px 5px 20px;
+                    background-color: #181824;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    cursor: pointer;
+                    margin-top: 5px;
+                }
+                .text_ex_three {
+                    height: 40px;
+                    border: 1px solid #8e8e98;
+                    border-radius: 5px 20px 5px 20px;
+                    background-color: #181824;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 17px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    background-color: #b494db;
+                    cursor: pointer;
+                }
+                .text_ex_three:hover {
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                }
+                .text_ex_four {
+                    font-weight: 400;
+                    margin-top: 17px;
+                    font-size: 15px;
+                }
+            </style>
+        </div>
+        <div class="auth_user_stream" style="display:none">
+            <div class="container">
+                <div class="header_ex">
+                    <span class="name_exstention">TPoints</span>
+                </div>
+                <div class="main_content">
+                    <div class="main_content_in">
+                        <div class="text_ex_first"><img  class="text_ex_first_img" style="height:100%" src=""></div>
+                        <div class="text_ex_second"></div>
+                        <div class="text_ex_second_two_name">Баланс:</div>
+                        <div class="text_ex_second_two">...</div>
+                        <div class="text_ex_three">Потратить баллы</div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    color: #ffffff;
+                    font-family: 'Rubik', sans-serif;
+                    font-size: 18px;
+                }
+                .container {
+                    background: #201e30;
+                    width: 350px;
+                }
+                .header_ex {
+                    width: 350px;
+                    height: 45px;
+                    background-color: #1a1924;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .name_exstention {
+                    color: #c5a1f9;
+                    font-size: 15px;
+                }
+                .main_content {
+                    width: 100%;
+                    background-image: url('img/tp.png');
+                    background-position: center;
+                    background-size: 70%;
+                    background-repeat: no-repeat;
+                }
+                .main_content_in {
+                    padding: 25px;
+                    font-weight: 400;
+                }
+                .text_ex_first {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-left: auto;
+                    margin-right: auto;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                }
+                .text_ex_second {
+                    margin-top: 17px;
+                    font-size: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #b494db;
+                    font-weight: 500;
+                }
+                .text_ex_second_two_name {
+                    margin-top: 17px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                }
+                .text_ex_second_two {
+                    height: 40px;
+                    width: 70px;
+                    border: 1px solid #8e8e98;
+                    border-radius: 5px 20px 5px 20px;
+                    background-color: #181824;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    cursor: pointer;
+                    margin-top: 5px;
+                }
+                .text_ex_three {
+                    height: 40px;
+                    border: 1px solid #8e8e98;
+                    border-radius: 5px 20px 5px 20px;
+                    background-color: #181824;
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.6);
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 17px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    background-color: #b494db;
+                    cursor: pointer;
+                }
+
+                .text_ex_three:hover {
+                    -webkit-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                    -moz-box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                    box-shadow: 0px 0px 40px -6px rgba(149, 86, 227, 0.2);
+                }
+                .text_ex_four {
+                    font-weight: 400;
+                    margin-top: 17px;
+                    font-size: 15px;
+                }
+            </style>
+        </div>
+    </body>
+</html>
