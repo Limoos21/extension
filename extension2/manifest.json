@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Twitch Points",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Награды за просмотр стримов",
     "icons": {
         "128": "img/logo.png"
@@ -20,11 +20,7 @@
     ],
     "action":{
         "default_icon": "img/logo.png",
-        "default_popup":"forms.html"
-    },
-    "action2":{
-        "default_icon": "img/logo.png",
-        "default_popup":"popup2.html"
+        "default_popup":"popup.html"
     },
     "content_scripts": [
         {
