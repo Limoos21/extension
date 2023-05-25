@@ -20,12 +20,12 @@ function checkStreamAndSendRequest() {
 
         if (isTwitchPage) {
           //TODO: ТУТ ЕГО НУЖНО БУДЕТ ПОЛУЧИТЬ ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА
-          chrome.storage.local.get(["token", "videoStatus"], function (result) {
+          chrome.storage.local.get(["token", "videoStatus", "username"], function (result) {
             const token = result.token;
             let status = result.videoStatus;
             console.log("Токен:", token);
             console.log("Статус видео:", status);
-
+            let username= result.username
             const regex = /twitch.tv\/([^/]+)/;
             const match = url.match(regex);
             //TODO: ТУТ НУЖНО БУДЕТ ЗАПИСАТЬ ИМЯ СТРИМЕРА В ПЕРЕМЕННУЮ
@@ -41,7 +41,7 @@ function checkStreamAndSendRequest() {
               }
             });
 
-            if (streamerName && status) {
+            if (streamerName && status && username) {
               fetch('http://127.0.0.1:8000/api/points/create/', {
                 method: 'POST',
                 headers: {
