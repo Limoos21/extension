@@ -19,14 +19,16 @@ function checkStreamAndSendRequest() {
         let isTwitchPage = url.includes("twitch.tv");
 
         if (isTwitchPage) {
+          //TODO: ТУТ ЕГО НУЖНО БУДЕТ ПОЛУЧИТЬ ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА
           chrome.storage.local.get(["token", "videoStatus"], function (result) {
             const token = result.token;
             let status = result.videoStatus;
             console.log("Токен:", token);
             console.log("Статус видео:", status);
 
-            const regex = /twitch.tv\/([^/]+)/; // Регулярное выражение для извлечения имени стримера
+            const regex = /twitch.tv\/([^/]+)/;
             const match = url.match(regex);
+            //TODO: ТУТ НУЖНО БУДЕТ ЗАПИСАТЬ ИМЯ СТРИМЕРА В ПЕРЕМЕННУЮ
             const streamerName = match ? match[1] : null;
             console.log("Имя стримера:", streamerName);
 
@@ -75,6 +77,6 @@ function checkStreamAndSendRequest() {
     });
   }, 10000);
 }
-// Вызываем функцию при загрузке страницы
+
 checkStreamAndSendRequest();
 

@@ -21,10 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("myButton").addEventListener("click", getToken);
 
   function checkVideoStatus() {
-    let video = document.querySelector('video');
     let status = true;
     console.log("Status:", status);
-
+//TODO: ТУТ НУЖНО ПОЛУЧИТЬ СТАТУС ВИДЕО И ИМЯ СТРИМЕРА ИЗ HTML СТРАНИЦЫ И ЗАПИСАТЬ ИХ В ЛОКАЛЬНОЕ ХРАНИЛИЩЕ
     // Сохранение статуса видео в локальное хранилище Chrome
     chrome.storage.local.set({ 'videoStatus': status }, function() {
       if (chrome.runtime.lastError) {
