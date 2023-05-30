@@ -20,35 +20,41 @@ function checkStreamAndSendRequest() {
 
         if (isTwitchPage) {
           //TODO: ТУТ ЕГО НУЖНО БУДЕТ ПОЛУЧИТЬ ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА
-          chrome.storage.local.get(["token", "videoStatus", "username"], function (result) {
+          chrome.storage.local.get(["token", "videoStatus", "username", "livestatus", 'namestreamer'], function (result) {
             const token = result.token;
             let status = result.videoStatus;
+            let livestatus = result.livestatus;
+            let namestreamer = result.namestreamer;
+            
+            
             console.log("Токен:", token);
             console.log("Статус видео:", status);
+            console.log ("Статус стримера:", livestatus);
+            console.log("Имя стримера:", namestreamer);
             let username= result.username
-            const regex = /twitch.tv\/([^/]+)/;
-            const match = url.match(regex);
-            //TODO: ТУТ НУЖНО БУДЕТ ЗАПИСАТЬ ИМЯ СТРИМЕРА В ПЕРЕМЕННУЮ
-            const streamerName = match ? match[1] : null;
-            console.log("Имя стримера:", streamerName);
-
+            // const regex = /twitch.tv\/([^/]+)/;
+            // const match = url.match(regex);
+            // //TODO: ТУТ НУЖНО БУДЕТ ЗАПИСАТЬ ИМЯ СТРИМЕРА В ПЕРЕМЕННУЮ и офлайн не офлайн
+            // const streamerName = match ? match[1] : null;
+            // console.log("Имя стримера:", streamerName);
+            
             // Запись имени стримера в локальное хранилище Chrome
-            chrome.storage.local.set({ 'streamerName': streamerName }, function() {
-              if (chrome.runtime.lastError) {
-                console.error(chrome.runtime.lastError);
-              } else {
-                console.log("Streamer name saved to local storage");
-              }
-            });
-
-            if (streamerName && status && username) {
+            // chrome.storage.local.set({ 'streamerName': streamerName }, function() {
+            //   if (chrome.runtime.lastError) {
+            //     console.error(chrome.runtime.lastError);
+            //   } else {
+            //     console.log("Streamer name saved to local storage");
+            //   }
+            // });
+            // Добавить если не офлайн в условие
+            if (namestreamer && status && username && livestatus) {
               fetch('http://127.0.0.1:8000/api/points/create/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                   'Authorization': `Token ${token}`
                 },
-                body: JSON.stringify({ 'streamerName': streamerName })
+                body: JSON.stringify({ 'namestreamer': namestreamer })
               })
                 .then(response => {
                   if (response.ok) {
@@ -66,7 +72,7 @@ function checkStreamAndSendRequest() {
                       console.log("Server response saved to local storage");
                     }
                   });
-                })
+                }) 
                 .catch(error => {
                   console.error('Request error:', error);
                 });

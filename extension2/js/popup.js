@@ -19,7 +19,7 @@ chrome.cookies.getAll({domain: "twitch.tv"}, function(cookies) {
  chrome.storage.local.get(["user", "token", "streamerName", "serverResponse", "username"], function(result) {
      if (!result.username){
             document.querySelector(".username").remove();
-            document.getElementById("myButton").remove();
+            
             document.querySelector(".autorize_text");
             document.querySelector(".namwstreamer").remove();
             document.querySelector(".points").remove();
@@ -27,14 +27,14 @@ chrome.cookies.getAll({domain: "twitch.tv"}, function(cookies) {
      else{
          if (result.user !== null) {
             document.querySelector(".username").textContent = result.user;
-            document.getElementById("myButton").remove();
+            
             document.querySelector(".autorize_text").textContent = "Вы вошли как:";
             document.querySelector(".namwstreamer").textContent = result.streamerName
             document.querySelector(".points").textContent = result.serverResponse.msg
   }
          else {
-            document.querySelector(".username").textContent = "вы вошли на twhith";
-            document.getElementById("myButton")
+            document.querySelector(".username").textContent = "вы вошли на twitch";
+            S
             document.querySelector(".autorize_text").textContent = "не удалось авторизироваться на сайте streampoint";
             document.querySelector(".namwstreamer").remove();
             document.querySelector(".points").remove();
