@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Twitch Points",
-    "version": "1.3.7",
+    "version": "1.3.8",
     "description": "Награды за просмотр стримов",
     "icons": {
         "128": "img/logo.png"

@@ -22,14 +22,15 @@ function checkVideoStatus() {
  let livestatus = false;
  let streamerName = document.querySelector(".channel-info-content .tw-title")?.textContent;
 
- let checkstatus = document.getElementsByClassName("CoreText-sc-1txzju1-0 jiQuvm");
- console.log("checkstatus:", checkstatus.textContent);
+ let checkstatus = document.querySelector(".jiQuvm")?.textContent;
 
- if (checkstatus.length <= 0) {
+ if (checkstatus == null) {
  console.log("Стример в сети");
+ console.log(checkstatus);
  livestatus = true;
  } else {
- console.log("Элемент класса пустой");
+ console.log("Стример не в сети");
+ console.log(checkstatus);
  }
 
  let status = true;
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Запускаем функцию checkVideoStatus каждые 10 секунд
-setInterval(checkVideoStatus, 10000);
+setInterval(checkVideoStatus, 1000);
 
 
 
