@@ -16,7 +16,7 @@ chrome.cookies.getAll({domain: "twitch.tv"}, function(cookies) {
         chrome.storage.local.set({"username":username})
     }
 })
- chrome.storage.local.get(["user", "token", "streamerName", "serverResponse", "username"], function(result) {
+ chrome.storage.local.get(["user", "token", "namestreamer", "serverResponse", "username"], function(result) {
      if (!result.username){
             document.querySelector(".username").remove();
             
@@ -29,9 +29,10 @@ chrome.cookies.getAll({domain: "twitch.tv"}, function(cookies) {
             document.querySelector(".username").textContent = result.user;
             
             document.querySelector(".autorize_text").textContent = "Вы вошли как:";
-            document.querySelector(".namwstreamer").textContent = result.streamerName
+            document.querySelector(".namwstreamer").textContent = result.namestreamer
             document.querySelector(".points").textContent = result.serverResponse.msg
   }
+
          else {
             document.querySelector(".username").textContent = "вы вошли на twitch";
             S

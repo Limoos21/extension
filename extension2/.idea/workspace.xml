@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75815037-85bb-4e0f-b914-48bee0768573" name="Changes" comment="добавил проверку на логин в акааунте твич, только забыл сделатьпровекрку на разлогин добаляется еще элсе.">
+      <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popup.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2PnGx85rrj03yFqgcVf6yibDz56" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nikita/Documents/GitHub/extension/extension2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;HTML&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75815037-85bb-4e0f-b914-48bee0768573" name="Changes" comment="" />
+      <created>1684085675954</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684085675954</updated>
+      <workItem from="1684085677012" duration="363000" />
+      <workItem from="1684149660297" duration="974000" />
+      <workItem from="1684921695004" duration="704000" />
+      <workItem from="1684922418272" duration="1236000" />
+      <workItem from="1684940116822" duration="27316000" />
+    </task>
+    <task id="LOCAL-00001" summary="отправляет запрос на сервер, и выводит имя стримера и баллы если они есть, если нет, выводит сообщение, тока сейчас не парсит статус видео и нужно так же немного изменить код и парсить имя стримера из html а не url и расширение будет готово">
+      <created>1684972355122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684972355122</updated>
+    </task>
+    <task id="LOCAL-00002" summary="отправляет запрос на сервер, и выводит имя стримера и баллы если они есть, если нет, выводит сообщение, тока сейчас не парсит статус видео и нужно так же немного изменить код и парсить имя стримера из html а не url и расширение будет готово">
+      <created>1684973109533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684973109533</updated>
+    </task>
+    <task id="LOCAL-00003" summary="добавил проверку на логин в акааунте твич, только забыл сделатьпровекрку на разлогин добаляется еще элсе.">
+      <created>1685037902495</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685037902495</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="отправляет запрос на сервер, и выводит имя стримера и баллы если они есть, если нет, выводит сообщение, тока сейчас не парсит статус видео и нужно так же немного изменить код и парсить имя стримера из html а не url и расширение будет готово" />
+    <MESSAGE value="добавил проверку на логин в акааунте твич, только забыл сделатьпровекрку на разлогин добаляется еще элсе." />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил проверку на логин в акааунте твич, только забыл сделатьпровекрку на разлогин добаляется еще элсе." />
+  </component>
+</project>

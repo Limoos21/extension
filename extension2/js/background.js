@@ -1,3 +1,28 @@
+// Функция для обработки сообщений от content.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  // Проверяем, есть ли в сообщении токен и имя пользователя
+  if (request.token && request.user) {
+    console.log("Токен:", request.token);
+    console.log("Имя пользователя:", request.user);
+    // Записываем токен и имя пользователя в локальное хранилище расширения
+    chrome.storage.local.set({ "token": request.token, "user": request.user });
+  }
+  // Проверяем, есть ли в сообщении имя стримера и статус
+  else if (request.namestreamer && request.livestatus) {
+    console.log("Имя стримера:", request.namestreamer);
+    console.log("Статус стримера:", request.livestatus);
+    // Записываем имя стримера и статус в локальное хранилище расширения
+    chrome.storage.local.set({ "namestreamer": request.namestreamer, "livestatus": request.livestatus });
+  }
+  // Иначе выводим ошибку
+  else {
+    console.error("Ошибка получения данных:", request.error);
+  }
+});
+
+
+
+
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.status === "complete" && tab.active) {
@@ -36,9 +61,9 @@ function checkStreamAndSendRequest() {
             // const match = url.match(regex);
             // //TODO: ТУТ НУЖНО БУДЕТ ЗАПИСАТЬ ИМЯ СТРИМЕРА В ПЕРЕМЕННУЮ и офлайн не офлайн
             // const streamerName = match ? match[1] : null;
-            // console.log("Имя стримера:", streamerName);
+            console.log("Имя стримера, бэкгроунд:", namestreamer);
             
-            // Запись имени стримера в локальное хранилище Chrome
+
             // chrome.storage.local.set({ 'streamerName': streamerName }, function() {
             //   if (chrome.runtime.lastError) {
             //     console.error(chrome.runtime.lastError);
@@ -47,7 +72,7 @@ function checkStreamAndSendRequest() {
             //   }
             // });
             // Добавить если не офлайн в условие
-            if (namestreamer && status && username && livestatus) {
+            if (namestreamer && username && livestatus) {
               fetch('http://127.0.0.1:8000/api/points/create/', {
                 method: 'POST',
                 headers: {
