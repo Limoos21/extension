@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
      <title></title>
@@ -21,4 +21,121 @@
         <div class="namwstreamer"></div>
         <div class="points"></div>
     </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StreamPoints</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            background-color: #9400D3;
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 50px;
+            inline-size: min-content;
+        }
+        
+        .header_ex {
+            background-color: #000000;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            width: 200px;
+        }
+        
+        .name_exstention {
+            font-size: 24px;
+        }
+        
+        .autorize {
+            background-color: #9400D3;
+            border: 1px solid #9400D3;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .autorize_text {
+            color: #000000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .username {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        #myButton {
+            background-color: #000000;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 0.4s;
+            width: 100%;
+        }
+        
+        #myButton:hover {
+            background-color: #000000;
+        }
+        
+        .namwstreamer {
+            font-size: 20px;
+            margin: -15px auto;
+            max-width: 400px;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        .points {
+            font-size: 12px;
+            margin: 10px auto;
+            max-width: 200px;
+            padding: 5px;
+            text-align: center;
+        }
+        .line {
+            color:#000000;
+
+        }
+        .apolog {
+            font-size: 12px;
+            margin: 5px ;
+            max-width: 200px;
+            padding: 5px;
+            text-align: left;
+        }
+        
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/popup.js"></script>
+</head>
+<body>
+    <div class="header_ex">
+        <span class="name_exstention">StreamPoints</span>
+    </div>
+    <div class="autorize">
+        <div class="autorize_text">Чтобы использовать, нужно авторизоваться на сайте twith</div>
+        <div class="username"></div>
+        <button id="myButton">Войти</button>
+        
+    </div>
+    <p class = "apolog">Имя твоего стримера</p>
+    <div class="namwstreamer"></div>
+    <div class="points"><p></p></div>
+</body>
 </html>
